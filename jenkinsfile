@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage ('git') {
             steps{
-                git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
+                git 'https://github.com/jitpack/maven-simple.git'
             }
         }
         stage ('build') {
