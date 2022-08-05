@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage ('git') {
             steps{
-                git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
+                git 'https://github.com/jleetutorial/maven-project.git'
             }
         }
         stage ('build') {
@@ -18,13 +18,13 @@ pipeline{
             }
              post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    junit 'webapp/target/surefire-reports/*.xml'
                 }
             }
         }
         stage ('archive') {
             steps{
-                archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+                archiveArtifacts artifacts: 'webapp/target/*.war', followSymlinks: false
             }
             
         }
