@@ -24,7 +24,7 @@ pipeline{
         }
         stage ('archive') {
             steps{
-                archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+                archiveArtifacts artifacts: 'target/my-app-1.0-SNAPSHOT.jar', followSymlinks: false
             }
             
         }
